@@ -7,6 +7,7 @@ export const AppRoutes = () => {
   const router = createBrowserRouter([...PublicRoutes, ...AdminRoutes]);
   return router;
 };
+
 export const router = createBrowserRouter([
   {
     path: "",

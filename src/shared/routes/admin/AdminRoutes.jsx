@@ -1,5 +1,5 @@
 import AdminLayout from "../../../layouts/admin/AppAdminLayout";
-import Dashboard from "../../../modules/admin/dashboard/Dashboard.jsx";
+import Dashboard from "../../../dashboards/admin/Dashboard";
 export const AdminRoutes = [
     {
         path:"admin",
