@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+}
+body {
+  overflow: hidden;
+}
+
+:root {
+  /* --e-primary-green: #67d3a1; */
+  --e-primary-green: #1bdd83;
+  --e-light-green: #6bf3b4;
+  --e-primary-crimson: #dc143c;
+  --e-light-crimson: #e74c5b;
+  --e-white: #ffff;
+  --e-gray: #a7a7a7;
+  --e-soft-gray: #ecf0f1;
+  --e-surface-ground: #f1f5f9;
+  --e-primary-orange: #ff6f61;
+  --e-light-orange: #ff897a;
+  --e-navy: #1a237e;
+  --e-dark-navy: #1b2a41;
+  --e-neon-blue: #00a8e8;
+  --e-border-color: #e2e8f0;
+}

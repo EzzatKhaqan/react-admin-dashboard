@@ -1,0 +1,7 @@
+.main-wrapper {
+  position: absolute;
+  width: 100%;
+  inset: 0;
+  overflow: auto;
+  margin-top: 55px;
+}
