@@ -1,14 +1,10 @@
-import "./styles/header.css";
+import styles from "./styles/header.module.css";
 
-function AppAdminHeader(){ 
+export const AppAdminHeader = ()=>{ 
     return (
         <>
-            <div className="nav">
-                
-               
+            <div className={styles.nav}>
+               <h1>Header</h1>
             </div>
         </>
 )};
-
-
-export default AppAdminHeader;

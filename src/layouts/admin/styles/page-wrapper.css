@@ -1,6 +1,7 @@
 .page-wrapper {
-  width: calc(100% - 250px);
+  width: calc(100% - 200px);
   height: 100%;
-  background-color: aqua;
-  margin-left: 250px;
+  background-color: transparent;
+  margin-left: 200px;
+  padding: 30px;
 }

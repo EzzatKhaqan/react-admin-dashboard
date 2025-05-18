@@ -8,7 +8,11 @@ export const AdminRoutes = [
                 {
                     path:"",
                     element:<Dashboard/>,
-                }
+                },{
+                    path:"test",
+                    element:<div>Test Component</div>
+                },
+
         ]   
     }
 ];

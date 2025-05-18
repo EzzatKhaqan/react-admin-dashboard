@@ -6,10 +6,10 @@
 }
 body {
   overflow: hidden;
+  background-color: var(--e-surface-ground);
 }
 
 :root {
-  /* --e-primary-green: #67d3a1; */
   --e-primary-green: #1bdd83;
   --e-light-green: #6bf3b4;
   --e-primary-crimson: #dc143c;

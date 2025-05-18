@@ -1,6 +1,6 @@
 
 
-const AppAdminFooter = () => {
+export const AppAdminFooter = () => {
 
     return (
         <>
@@ -8,6 +8,3 @@ const AppAdminFooter = () => {
         </>
     );
 }
-
-
-export default AppAdminFooter;
