@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
 import {
     Menu,
 } from "../../shared/index";
 import { useState } from "react";
+
 export const AppAdminSideBar = ()=>{
 
     const [model] = useState([
@@ -12,7 +12,7 @@ export const AppAdminSideBar = ()=>{
                 {
                     label:"dashboard",
                     icon:"pi pi-chart-bar",
-                    path:"/admin"
+                    to:"/admin"
                 }
             ]
         },
@@ -20,70 +20,49 @@ export const AppAdminSideBar = ()=>{
             label:"UI Components",
             items:[
                 {
+                    label:"Test",
+                    icon:"pi pi-chart-bar",
+                    to:"/admin/test"
+                },
+                {
                     label:"Table",
-                    path:"/admin/ui-kits/table",
+                    to:"/admin/ui-kits/table",
                     icon:"pi pi-table"
                 },
                 {
                     label:"Input",
-                    path:"/admin/ui-kits/input",
+                    to:"/admin/ui-kits/input",
                     icon:"pi pi-check-square"
                 },
             ]
 
         },
         {
-            label: 'Hierarchy',
-            items: [
+            label:"Multilevel",
+            items:[
                 {
-                    label: 'Submenu 1',
-                    icon: 'pi pi-fw pi-bookmark',
-                    items: [
+                    label:"Level 1",
+                    items:[
                         {
-                            label: 'Submenu 1.1',
-                            icon: 'pi pi-fw pi-bookmark',
-                            items: [
-                                { label: 'Submenu 1.1.1', icon: 'pi pi-fw pi-bookmark' },
-                                { label: 'Submenu 1.1.2', icon: 'pi pi-fw pi-bookmark' },
-                                { label: 'Submenu 1.1.3', icon: 'pi pi-fw pi-bookmark' }
+                            label:"Level 1.2",
+                            items:[
+                                {
+                                    label:"Level 1.3"
+                                }
                             ]
-                        },
-                        {
-                            label: 'Submenu 1.2',
-                            icon: 'pi pi-fw pi-bookmark',
-                            items: [{ label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-bookmark' }]
-                        }
-                    ]
-                },
-                {
-                    label: 'Submenu 2',
-                    icon: 'pi pi-fw pi-bookmark',
-                    items: [
-                        {
-                            label: 'Submenu 2.1',
-                            icon: 'pi pi-fw pi-bookmark',
-                            items: [
-                                { label: 'Submenu 2.1.1', icon: 'pi pi-fw pi-bookmark' },
-                                { label: 'Submenu 2.1.2', icon: 'pi pi-fw pi-bookmark' }
-                            ]
-                        },
-                        {
-                            label: 'Submenu 2.2',
-                            icon: 'pi pi-fw pi-bookmark',
-                            items: [{ label: 'Submenu 2.2.1', icon: 'pi pi-fw pi-bookmark' }]
                         }
                     ]
                 }
             ]
-        },
+        }
+        
+       
     ]);
 
     return (
     <>
             <div className="sidebar-wrapper">
-                <div className="sidebar-content">
-                <Menu model={model}/>
-                </div>
+                    <Menu model={model}/>
             </div>
         </>
     );

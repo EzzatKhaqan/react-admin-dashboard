@@ -7,6 +7,7 @@
 body {
   overflow: hidden;
   background-color: var(--e-surface-ground);
+  font-family: "Lato", sans-serif;
 }
 
 :root {
@@ -24,4 +25,5 @@ body {
   --e-dark-navy: #1b2a41;
   --e-neon-blue: #00a8e8;
   --e-border-color: #e2e8f0;
+  --e-text-color: #334155;
 }
