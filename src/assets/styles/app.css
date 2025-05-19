@@ -7,7 +7,7 @@
 body {
   overflow: hidden;
   background-color: var(--e-surface-ground);
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 :root {

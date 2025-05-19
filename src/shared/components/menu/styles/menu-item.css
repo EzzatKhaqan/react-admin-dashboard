@@ -12,6 +12,7 @@
   text-transform: uppercase;
   margin: 10px 0;
   color: var(--e-text-color);
+  user-select: none;
 }
 
 .submenu li > a {
