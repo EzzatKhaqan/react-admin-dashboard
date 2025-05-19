@@ -17,9 +17,9 @@ export const AppAdminSideBar = () => {
       label: 'UI Components',
       items: [
         {
-          label: 'Test',
-          icon: 'pi pi-chart-bar',
-          to: '/admin/test',
+          label: 'Form',
+          to: '/admin/ui-kits/form',
+          icon: 'pi pi-fw pi-file',
         },
         {
           label: 'Table',
@@ -30,24 +30,6 @@ export const AppAdminSideBar = () => {
           label: 'Input',
           to: '/admin/ui-kits/input',
           icon: 'pi pi-check-square',
-        },
-      ],
-    },
-    {
-      label: 'Multilevel',
-      items: [
-        {
-          label: 'Level 1',
-          items: [
-            {
-              label: 'Level 1.2',
-              items: [
-                {
-                  label: 'Level 1.3',
-                },
-              ],
-            },
-          ],
         },
       ],
     },
