@@ -1,21 +1,20 @@
 import './styles/pageheader.css';
 
-export const PageHeader = ({ start, center, end, breadcrumb }) => {
+export const PageHeader = ({ title, start, center, end, breadcrumb }) => {
   return (
     <>
-      <div className="page-header-wrapper">
+      <div className="page-header">
         <div className="start">
-          <div className={['page-header-title', breadcrumb && 'mb-1.5'].join(' ')}>{start}</div>
-          {breadcrumb}
+          {title && (
+            <div className={['page-header-title', breadcrumb && 'mb-1.5'].join(' ')}>
+              {title && title}
+            </div>
+          )}
+          {title && breadcrumb}
+          {start && start}
         </div>
-        <div className="center">
-          <div className="page-header-title">{center}</div>
-          <div className="page-header-breadcrumb"></div>
-        </div>
-        <div className="end">
-          <div className="page-header-title">{end}</div>
-          <div className="page-header-breadcrumb"></div>
-        </div>
+        <div className="center">{center && center}</div>
+        <div className="end">{end && end}</div>
       </div>
     </>
   );

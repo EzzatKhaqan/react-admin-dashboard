@@ -1,26 +1,24 @@
-.page-header-wrapper {
+.page-header {
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  min-height: 45px;
+  min-height: 40px;
   border-radius: 5px;
   background: var(--e-white);
   border: 1px solid var(--e-border-color);
-  padding: 5px;
+  padding: 5px 15px;
   margin-bottom: 30px;
 }
 
-.page-header-wrapper .page-header-title {
+.page-header .page-header-title {
   font-size: 20px;
   font-weight: 600;
 }
-.page-header-wrapper .page-header-breadcrumb {
-  font-size: 10px;
-}
+
 @media screen and (max-width: 768px) {
-  .page-header-wrapper {
+  .page-header {
     flex-direction: column;
     align-items: flex-start;
   }

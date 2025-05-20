@@ -1,11 +1,11 @@
 import { DataTable } from '../../../shared';
-import { PageHeader } from '../../../shared/components/common/pageHeader/PageHeader';
+import { PageHeader } from '../../../shared/index';
+
 export const Table = () => {
   return (
     <>
-      <PageHeader start="Data Table" />
+      <PageHeader title="Data Table" />
 
-      <h1>This is Datatable</h1>
       <DataTable />
     </>
   );

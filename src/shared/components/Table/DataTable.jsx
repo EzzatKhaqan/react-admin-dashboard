@@ -1,9 +1,9 @@
-import styles from './styles/table.module.css';
+import './styles/table.css';
 
 export const DataTable = () => {
   return (
     <>
-      <div className={styles.tableWrapper}>
+      <div className="datatable-wrapper">
         <h1>Table</h1>
       </div>
     </>
