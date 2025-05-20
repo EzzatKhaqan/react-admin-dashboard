@@ -3,6 +3,7 @@ import Dashboard from '../../../dashboards/admin/Dashboard';
 import { Table } from '../../../modules/admin/uikit/Table';
 import { Form } from '../../../modules/admin/uikit/Form';
 import { Input } from '../../../modules/admin/uikit/Input';
+
 export const AdminRoutes = [
   {
     path: 'admin',

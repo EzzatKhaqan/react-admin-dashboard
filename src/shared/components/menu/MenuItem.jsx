@@ -10,7 +10,7 @@ export const MenuItem = ({ item = [], root = true }) => {
 
   return (
     <>
-      <li disabled className={root ? 'root-menuitem' : ''}>
+      <li className={root ? 'root-menuitem' : ''}>
         {root && <div className="menuitem-root-text">{item.label}</div>}
         {!root && (
           <Wrapper {...wrapperProps}>
