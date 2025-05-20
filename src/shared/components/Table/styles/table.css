@@ -1,8 +1,25 @@
-.datatable-wrapper {
-  width: 100%;
-  height: 100px;
+.datatable-table {
   background-color: var(--e-white);
   border: 1px solid var(--e-border-color);
   border-radius: 5px;
-  padding: 5px;
+  padding: 20px 20px;
+  position: relative;
+  margin: auto;
+  max-width: 1500px;
+  margin-bottom: 20px;
+}
+
+.datatable-table-content {
+  overflow: auto;
+  position: relative;
+}
+table {
+  width: 100%;
+}
+th,
+td {
+  padding: 10px 14px;
+  border: 1px solid var(--e-border-color);
+  text-align: center;
+  min-width: 140px;
 }
