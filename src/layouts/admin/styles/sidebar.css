@@ -9,3 +9,22 @@
   z-index: 100;
   padding: 15px;
 }
+
+.sidebar-toggle-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.sidebar-toggle-btn i {
+  transition: all 0.1s ease-in-out;
+}
+.sidebar-toggle-btn i:hover {
+  transform: scale(1.1);
+  color: var(--e-primary);
+}
+.sidebar-toggle-btn i:active {
+  transform: scale(2);
+  transform: translateX(-5px);
+}

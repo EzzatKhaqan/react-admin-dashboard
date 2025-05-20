@@ -35,9 +35,15 @@ export const AppAdminSideBar = () => {
     },
   ]);
 
+  const toggleSidebar = () => {
+    console.log('Ok');
+  };
   return (
     <>
       <div className="sidebar-wrapper">
+        <div className="sidebar-toggle-btn">
+          <i className="pi pi-arrow-left" onClick={toggleSidebar}></i>
+        </div>
         <Menu model={model} />
       </div>
     </>
