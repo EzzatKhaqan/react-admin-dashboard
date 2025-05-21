@@ -1,6 +1,5 @@
 import { DataTable } from '../../../shared';
 import { PageHeader } from '../../../shared/index';
-
 export const Table = () => {
   const columns = [
     {

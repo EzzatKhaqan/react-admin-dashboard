@@ -4,4 +4,10 @@
   background-color: transparent;
   margin-left: 200px;
   padding: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.sidebar-inactive .page-wrapper {
+  margin-left: 0;
+  width: 100%;
 }

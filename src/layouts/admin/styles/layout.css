@@ -5,3 +5,7 @@
   overflow: auto;
   margin-top: 55px;
 }
+
+.sidebar-inactive .sidebar-wrapper {
+  transform: translateX(-200px);
+}

@@ -5,8 +5,13 @@
   width: 200px;
   height: calc(100% - 55px);
   background: var(--e-white);
-  overflow: auto;
   z-index: 100;
+  transition: all 0.3s ease-in-out;
+}
+.sidebar-content {
+  overflow: auto;
+  position: absolute;
+  inset: 0;
   padding: 15px;
 }
 
@@ -16,15 +21,33 @@
   right: 10px;
   cursor: pointer;
   font-size: 16px;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+  background: var(--e-surface-ground);
+  padding: 2px;
+  border-radius: 5px;
+  width: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .sidebar-toggle-btn i {
   transition: all 0.1s ease-in-out;
+  color: var(--e-danger);
 }
-.sidebar-toggle-btn i:hover {
-  transform: scale(1.1);
-  color: var(--e-primary);
+.sidebar-toggle-btn:hover i {
+  transform: scale(1.2);
 }
-.sidebar-toggle-btn i:active {
+.sidebar-toggle-btn:active i {
   transform: scale(2);
   transform: translateX(-5px);
+}
+
+.sidebar-inactive .sidebar-toggle-btn {
+  background: var(--e-white);
+  right: -30px;
+  transform: rotate(180deg);
+}
+.sidebar-inactive .sidebar-toggle-btn i {
+  color: var(--e-primary-green);
 }

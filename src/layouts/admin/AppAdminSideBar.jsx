@@ -1,6 +1,6 @@
 import { Menu } from '../../shared/index';
-import { useState } from 'react';
-
+import { useRef, useState } from 'react';
+import { useLayout } from './context/LayoutContext';
 export const AppAdminSideBar = () => {
   const [model] = useState([
     {
@@ -34,17 +34,17 @@ export const AppAdminSideBar = () => {
       ],
     },
   ]);
+  const { toggleSidebar } = useLayout();
 
-  const toggleSidebar = () => {
-    console.log('Ok');
-  };
   return (
     <>
       <div className="sidebar-wrapper">
-        <div className="sidebar-toggle-btn">
-          <i className="pi pi-arrow-left" onClick={toggleSidebar}></i>
+        <div className="sidebar-toggle-btn" onClick={toggleSidebar}>
+          <i className="pi pi-angle-double-left"></i>
         </div>
-        <Menu model={model} />
+        <div className="sidebar-content">
+          <Menu model={model} />
+        </div>
       </div>
     </>
   );
