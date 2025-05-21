@@ -34,6 +34,7 @@ export const AppAdminSideBar = () => {
       ],
     },
   ]);
+
   const { toggleSidebar } = useLayout();
 
   return (

@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 import { AppAdminHeader } from './AppAdminHeader';
 import { AppAdminSideBar } from './AppAdminSideBar';
 import { AppAdminFooter } from './AppAdminFooter';
-import './styles/style.css';
+
 import { useLayout } from './context/LayoutContext';
 const AdminLayout = () => {
   const { isSidebarOpen } = useLayout();

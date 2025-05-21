@@ -1,11 +1,10 @@
-
-const Dashboard = ()=>{
-    return (
-        <div className="dashboard">
-            <h1>Dashboard</h1>
-            <p>Welcome to the admin dashboard!</p>
-        </div>
-    );
+import { PageHeader } from '../../shared';
+const Dashboard = () => {
+  return (
+    <div className="dashboard">
+      <PageHeader title="Wellcome Admin" />
+    </div>
+  );
 };
 
 export default Dashboard;
