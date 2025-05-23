@@ -1,5 +1,5 @@
 import { Menu } from '../../shared/index';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { useLayout } from './context/LayoutContext';
 export const AppAdminSideBar = () => {
   const [model] = useState([
@@ -30,6 +30,51 @@ export const AppAdminSideBar = () => {
           label: 'Input',
           to: '/admin/ui-kits/input',
           icon: 'pi pi-check-square',
+        },
+      ],
+    },
+    {
+      label: 'Level',
+      items: [
+        {
+          label: 'Label 1',
+          icon: 'pi pi-table',
+          items: [
+            {
+              label: 'Level 1.1',
+              icon: 'pi pi-table',
+              items: [
+                {
+                  label: 'Level 1.2',
+                  icon: 'pi pi-table',
+                  items: [
+                    {
+                      label: 'Level 1.3',
+                      icon: 'pi pi-table',
+                      items: [
+                        {
+                          label: 'Level 1.4',
+                          icon: 'pi pi-table',
+                          items: [
+                            {
+                              label: 'Level 1.5',
+                              icon: 'pi pi-table',
+                              items: [
+                                {
+                                  label: 'Level 1.6',
+                                  icon: 'pi pi-table',
+                                },
+                              ],
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
         },
       ],
     },

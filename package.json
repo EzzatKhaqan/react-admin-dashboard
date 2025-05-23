@@ -5,6 +5,7 @@
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.7",
     "cra-template": "1.2.0",
+    "motion": "^12.12.1",
     "primeicons": "^7.0.0",
     "prop-types": "^15.8.1",
     "react": "^19.0.0",

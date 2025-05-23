@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export const Menu = ({ model }) => {
   return (
     <>
-      <ul className="layout-menu">
+      <ul className="menu">
         {model.map((item, index) => (
           <MenuItem item={item} key={index} root={true} />
         ))}
