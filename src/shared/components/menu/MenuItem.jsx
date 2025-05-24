@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useMemo, useRef } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { useLayout } from '../../../layouts/admin/context/LayoutContext';
 import PropTypes from 'prop-types';
@@ -12,11 +12,13 @@ export const MenuItem = ({ item = {}, root = true, index, parentItemKey }) => {
   const isLink = Boolean(item.to);
   const Wrapper = isLink ? Link : 'a';
   const wrapperProps = isLink ? { to: item.to } : {};
-  const { activeMenuItem, setActiveMenuItem, toggleMenu, layoutState } = useLayout();
+  const { activeMenuItem, setActiveMenuItem } = useLayout();
+
   // Dynamically compute item key
   const itemKey = useMemo(() => {
     return parentItemKey ? `${parentItemKey}-${index}` : String(index);
   }, [parentItemKey, index]);
+  // Dynamically compute isActiveMenu
   const isActiveMenu = useMemo(() => {
     return (
       activeMenuItem === itemKey || (activeMenuItem && activeMenuItem.startsWith(itemKey + '-'))
@@ -25,7 +27,6 @@ export const MenuItem = ({ item = {}, root = true, index, parentItemKey }) => {
 
   const itemClick = (event, item) => {
     const newActiveKey = hasItem ? (itemKey === activeMenuItem ? parentItemKey : itemKey) : itemKey;
-
     setActiveMenuItem(newActiveKey);
   };
 
