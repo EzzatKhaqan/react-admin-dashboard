@@ -1,96 +1,79 @@
-import { Link } from 'react-router-dom';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { useLocation, Link } from 'react-router-dom';
+import { useLayout } from '../../../layouts/admin/context/LayoutContext';
 import PropTypes from 'prop-types';
-import { useRef, useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import { AnimatePresence, motion } from 'motion/react';
 import { CSSTransition } from 'react-transition-group';
-export const MenuItem = ({ item = [], root = true, index }) => {
+
+export const MenuItem = ({ item = {}, root = true, index, parentItemKey }) => {
+  const location = useLocation();
+  const submenuRef = useRef(null);
+
   const hasItem = Array.isArray(item.items) && item.items.length > 0;
   const isLink = Boolean(item.to);
   const Wrapper = isLink ? Link : 'a';
   const wrapperProps = isLink ? { to: item.to } : {};
-  const location = useLocation();
-  const [isOpen, setIsOpen] = useState(false);
-  const submenuRef = useRef(null);
-  function toggleSubmenu() {
-    setIsOpen((prev) => !prev);
-  }
+  const { activeMenuItem, setActiveMenuItem, toggleMenu, layoutState } = useLayout();
+  // Dynamically compute item key
+  const itemKey = useMemo(() => {
+    return parentItemKey ? `${parentItemKey}-${index}` : String(index);
+  }, [parentItemKey, index]);
+  const isActiveMenu = useMemo(() => {
+    return (
+      activeMenuItem === itemKey || (activeMenuItem && activeMenuItem.startsWith(itemKey + '-'))
+    );
+  }, [activeMenuItem, itemKey]);
 
-  function checkActiveRoute(item) {
-    if (item.to) return item.to == location.pathname;
-    else return false;
-  }
+  const itemClick = (event, item) => {
+    const newActiveKey = hasItem ? (itemKey === activeMenuItem ? parentItemKey : itemKey) : itemKey;
 
-  function checkSubmenu() {
-    return root ? true : isOpen;
-  }
-  const submenuVisible = hasItem && checkSubmenu();
+    setActiveMenuItem(newActiveKey);
+  };
+
+  const checkActiveRoute = () => item.to === location.pathname;
+  const submenuVisible = hasItem && (root || isActiveMenu);
+
   return (
-    <>
-      <li className={[root ? 'root-menuitem' : '', isOpen && 'active-menuitem'].join(' ')}>
-        {root && <div className="menuitem-root-text">{item.label}</div>}
-        {!root && (
-          <Wrapper
-            {...wrapperProps}
-            className={[checkActiveRoute(item) ? 'active-route' : '']}
-            onClick={(e) => {
-              if (hasItem) {
-                e.preventDefault();
-                toggleSubmenu();
-              }
-            }}
-          >
-            <i className={[item.icon, 'menuitem-icon'].join(' ')}></i>
-            <span className="menuitem-text">{item.label}</span>
-            {hasItem && <i className="pi pi-angle-right submenu-toggler"></i>}
-          </Wrapper>
-        )}
+    <li className={[root ? 'root-menuitem' : '', isActiveMenu && 'active-menuitem'].join(' ')}>
+      {root && <div className="menuitem-root-text">{item.label}</div>}
 
-        <CSSTransition
-          in={submenuVisible}
-          timeout={1000}
-          classNames="submenu"
-          unmountOnExit
-          nodeRef={submenuRef}
+      {!root && (
+        <Wrapper
+          {...wrapperProps}
+          className={[checkActiveRoute() ? 'active-route' : ''].join(' ')}
+          onClick={(e) => {
+            if (hasItem) {
+              e.preventDefault();
+              itemClick(e, item);
+            }
+          }}
         >
-          <ul className="submenu" ref={submenuRef}>
-            {hasItem &&
-              item.items.map((item, index) => (
-                <MenuItem key={index} item={item} root={false} index={index} />
-              ))}
-          </ul>
-        </CSSTransition>
+          <i className={[item.icon, 'menuitem-icon'].join(' ')}></i>
+          <span className="menuitem-text">{item.label}</span>
+          {hasItem && <i className="pi pi-angle-right submenu-toggler"></i>}
+        </Wrapper>
+      )}
 
-        {/* {hasItem && ( 
-          <AnimatePresence initial={false}>
-            {checkSubmenu() && (
-              <motion.ul
-                className="submenu overflow-hidden"
-                key="submenu"
-                initial={{ maxHeight: 0, opacity: 0 }}
-                animate={{ maxHeight: 1000, opacity: 1 }}
-                exit={{ maxHeight: 0 }}
-                transition={{
-                  maxHeight: { duration: 0.1, ease: 'easeInOut' },
-                }}
-              >
-                {item.items.map((item, index) => (
-                  <MenuItem key={index} item={item} root={false} index={index} />
-                ))}
-              </motion.ul>
-            )}
-          </AnimatePresence>
-        )} */}
-      </li>
-    </>
+      <CSSTransition
+        in={submenuVisible}
+        timeout={300}
+        classNames="submenu"
+        unmountOnExit
+        nodeRef={submenuRef}
+      >
+        <ul className="submenu" ref={submenuRef}>
+          {hasItem &&
+            item.items.map((child, i) => (
+              <MenuItem key={i} item={child} root={false} index={i} parentItemKey={itemKey} />
+            ))}
+        </ul>
+      </CSSTransition>
+    </li>
   );
 };
 
 MenuItem.propTypes = {
-  item: PropTypes.shape({
-    label: PropTypes.string,
-    icon: PropTypes.string,
-    to: PropTypes.string,
-  }),
+  item: PropTypes.object.isRequired,
   root: PropTypes.bool,
+  index: PropTypes.number.isRequired,
+  parentItemKey: PropTypes.string,
 };

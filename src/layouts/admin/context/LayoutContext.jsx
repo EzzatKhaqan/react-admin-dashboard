@@ -5,7 +5,7 @@ const LayoutContext = createContext();
 export const LayoutProvider = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isDarkMode, setIsDarkMode] = useState(false);
-
+  const [activeMenuItem, setActiveMenuItem] = useState(null);
   const toggleSidebar = () => setIsSidebarOpen((prev) => !prev);
   const toggleDarkMode = () => {
     document.documentElement.classList.toggle('dark');
@@ -25,6 +25,8 @@ export const LayoutProvider = ({ children }) => {
         setIsDarkMode,
         toggleSidebar,
         toggleDarkMode,
+        activeMenuItem,
+        setActiveMenuItem,
       }}
     >
       {children}
