@@ -80,25 +80,17 @@
     .menuitem-text {
       font-size: 13px;
     }
-
-    &.active-menuitem {
-      > .submenu-toggler {
-        transform: rotate(-180deg);
-      }
-    }
   }
 
   li.active-menuitem {
     > a {
       .submenu-toggler {
-        transform: rotate(-180deg);
+        transform: rotate(90deg);
       }
     }
   }
 
   ul {
-    margin: 0;
-    padding: 0;
     list-style-type: none;
 
     a {
@@ -175,4 +167,21 @@
       }
     }
   }
+}
+.submenu-enter {
+  max-height: 0;
+}
+.submenu-enter-active {
+  max-height: 1000px;
+  overflow: hidden;
+  transition: max-height 1s ease-in-out;
+}
+
+.submenu-exit {
+  max-height: 1000px;
+}
+.submenu-exit-active {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0, 1, 0, 1);
 }

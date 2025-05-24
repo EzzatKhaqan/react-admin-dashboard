@@ -62,7 +62,7 @@ export const AppAdminSideBar = () => {
                               items: [
                                 {
                                   label: 'Level 1.6',
-                                  icon: 'pi pi-table',
+                                  to: '/admin',
                                 },
                               ],
                             },
@@ -71,6 +71,22 @@ export const AppAdminSideBar = () => {
                       ],
                     },
                   ],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          label: 'Level 2',
+          icon: 'pi pi-table',
+          items: [
+            {
+              label: 'Level 2.1',
+              icon: 'pi pi-table',
+              items: [
+                {
+                  label: 'Level 2.2',
+                  icon: 'pi pi-table',
                 },
               ],
             },
