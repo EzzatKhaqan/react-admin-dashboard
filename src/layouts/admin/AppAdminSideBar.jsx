@@ -17,6 +17,11 @@ export const AppAdminSideBar = () => {
       label: 'UI Components',
       items: [
         {
+          label: 'Button',
+          to: '/admin/ui-kits/button',
+          icon: 'pi pi-mobile',
+        },
+        {
           label: 'Form',
           to: '/admin/ui-kits/form',
           icon: 'pi pi-fw pi-file',

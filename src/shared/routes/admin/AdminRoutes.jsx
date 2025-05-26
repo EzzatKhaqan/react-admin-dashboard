@@ -3,6 +3,7 @@ import Dashboard from '../../../dashboards/admin/Dashboard';
 import { Table } from '../../../modules/admin/uikit/Table';
 import { Form } from '../../../modules/admin/uikit/Form';
 import { Input } from '../../../modules/admin/uikit/Input';
+import { Button } from '../../../modules/admin/uikit/Button';
 
 export const AdminRoutes = [
   {
@@ -16,6 +17,10 @@ export const AdminRoutes = [
       {
         path: 'ui-kits',
         children: [
+          {
+            path: 'button',
+            element: <Button />,
+          },
           {
             path: 'form',
             element: <Form />,

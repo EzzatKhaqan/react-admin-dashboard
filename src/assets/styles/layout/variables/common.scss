@@ -15,4 +15,30 @@
   --e-dark-navy: #1b2a41;
   --e-border-color: #e2e8f0;
   --e-text-color: #334155;
+  --e-black: black;
+  // button
+  --e-button-primary: #00a8e8;
+  --e-button-primary-hover: #0b84b4;
+  --e-button-primary-outlined-hover: #c8e8f5;
+  --e-button-secondary: #f1f5f9;
+  --e-button-secondary-hover: #dee3e5;
+  --e-button-secondary-outlined-hover: #edeff0;
+  --e-button-success: #22c55e;
+  --e-button-success-hover: #0ba242;
+  --e-button-success-outlined-hover: #d2f3dd;
+  --e-button-info: #0ea5e9;
+  --e-button-info-hover: #0a78ab;
+  --e-button-info-outlined-hover: #d3f1ff;
+  --e-button-warning: #f97316;
+  --e-button-warning-hover: #b14f08;
+  --e-button-warning-outlined-hover: #fee6d5;
+  --e-button-help: #7701f5;
+  --e-button-help-hover: #5708ac;
+  --e-button-help-outlined-hover: #e4cbff;
+  --e-button-danger: #ec0a0a;
+  --e-button-danger-hover: #ba0606;
+  --e-button-danger-outlined-hover: #ffdede;
+  --e-button-contrast: var(--e-black);
+  --e-button-contrast-hover: rgb(45, 43, 43);
+  --e-button-contrast-outlined-hover: rgb(130, 127, 127, 0.3);
 }
