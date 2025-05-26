@@ -1,3 +1,4 @@
+@use 'sass:color';
 // button
 $e-button-primary: #00a8e8;
 $e-button-primary-outlined-hover: #c8e8f5;
@@ -23,7 +24,7 @@ $e-button-contrast-outlined-hover: rgb(130, 127, 127, 0.3);
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.3);
     border-radius: if($rounded, 20px, 5px);
   }
 }
@@ -51,10 +52,10 @@ $e-button-contrast-outlined-hover: rgb(130, 127, 127, 0.3);
 }
 
 @function get-darken-color($color) {
-  @return darken($color, 13%);
+  @return color.adjust($color, $lightness: -13%);
 }
 @function get-lighter-color($color) {
-  @return lighten($color, 45%);
+  @return color.adjust($color, $lightness: 45%);
 }
 
 .e-button {
