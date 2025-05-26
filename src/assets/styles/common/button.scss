@@ -1,3 +1,62 @@
+// button
+$e-button-primary: #00a8e8;
+$e-button-primary-outlined-hover: #c8e8f5;
+$e-button-secondary: #f1f5f9;
+$e-button-secondary-outlined-hover: #edeff0;
+$e-button-success: #22c55e;
+$e-button-success-outlined-hover: #d2f3dd;
+$e-button-info: #0ea5e9;
+$e-button-info-outlined-hover: #d3f1ff;
+$e-button-warning: #f97316;
+$e-button-warning-outlined-hover: #fee6d5;
+$e-button-help: #7701f5;
+$e-button-help-outlined-hover: #e4cbff;
+$e-button-danger: #ec0a0a;
+$e-button-danger-outlined-hover: #ffdede;
+$e-button-contrast: #000;
+$e-button-contrast-outlined-hover: rgb(130, 127, 127, 0.3);
+
+@mixin disabled-style($rounded: false) {
+  pointer-events: none;
+  opacity: 0.5;
+  &:after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: if($rounded, 20px, 5px);
+  }
+}
+
+@mixin button-style(
+  $text_color,
+  $text_outlined_color,
+  $bg_color,
+  $bg_hover_color,
+  $bg_outlined_hover_color
+) {
+  background: $bg_color;
+  color: $text_color;
+  border: 1px solid;
+  &.outlined {
+    border: 1px solid $text_outlined_color;
+    color: $text_outlined_color;
+    &:hover {
+      background: $bg_outlined_hover_color;
+    }
+  }
+  &:hover {
+    background: $bg_hover_color;
+  }
+}
+
+@function get-darken-color($color) {
+  @return darken($color, 13%);
+}
+@function get-lighter-color($color) {
+  @return lighten($color, 45%);
+}
+
 .e-button {
   padding: 8px;
   border: 1px solid var(--e-border-color);
@@ -6,7 +65,7 @@
   transition: all 0.3s;
   font-size: 14px;
   user-select: none;
-
+  position: relative;
   &:hover {
     background: var(--e-soft-gray);
   }
@@ -16,7 +75,11 @@
   }
 
   &.disabled {
-    cursor: auto;
+    @include disabled-style(false);
+  }
+
+  &.disabled.rounded {
+    @include disabled-style(true);
   }
 
   &.primary,
@@ -33,177 +96,82 @@
   }
 
   &.primary {
-    background: var(--e-button-primary);
-    color: white;
-    border: 1px solid;
-    &.outlined {
-      border: 1px solid var(--e-button-primary);
-      color: var(--e-button-primary);
-      &:hover {
-        background: var(--e-button-primary-outlined-hover);
-      }
-    }
-    &.disabled {
-      background-color: var(--e-button-primary-outlined-hover);
-      &:hover {
-        background-color: var(--e-button-primary-outlined-hover);
-      }
-    }
-    &:hover {
-      background: var(--e-button-primary-hover);
-    }
+    @include button-style(
+      var(--e-white),
+      $e-button-primary,
+      $e-button-primary,
+      get-darken-color($e-button-primary),
+      get-lighter-color($e-button-primary)
+    );
   }
 
   &.secondary {
-    background: var(--e-button-secondary);
-    border: 1px solid var(--e-border-color);
-    &.outlined {
-      border: 1px solid var(--e-button-secondary);
-      color: #9aa2aa;
-      &:hover {
-        background: var(--e-button-secondary-outlined-hover);
-      }
-    }
-    &.disabled {
-      background-color: var(--e-button-secondary-outlined-hover);
-      &:hover {
-        background-color: var(--e-button-secondary-outlined-hover);
-      }
-    }
-    &:hover {
-      background: var(--e-button-secondary-hover);
-    }
+    @include button-style(
+      var(--e-black),
+      var(--e-black),
+      $e-button-secondary,
+      get-darken-color($e-button-secondary),
+      get-lighter-color($e-button-secondary)
+    );
   }
 
   &.success {
-    background: var(--e-button-success);
-    color: white;
-    border: 1px solid;
-    &.outlined {
-      border: 1px solid var(--e-button-success);
-      color: var(--e-button-success);
-      &:hover {
-        background: var(--e-button-success-outlined-hover);
-      }
-    }
-    &.disabled {
-      background-color: var(--e-button-success-outlined-hover);
-      &:hover {
-        background-color: var(--e-button-success-outlined-hover);
-      }
-    }
-    &:hover {
-      background: var(--e-button-success-hover);
-    }
+    @include button-style(
+      var(--e-white),
+      $e-button-success,
+      $e-button-success,
+      get-darken-color($e-button-success),
+      get-lighter-color($e-button-success)
+    );
   }
 
   &.info {
-    background: var(--e-button-info);
-    color: white;
-    border: 1px solid;
-    &.outlined {
-      border: 1px solid var(--e-button-info);
-      color: var(--e-button-info);
-      &:hover {
-        background: var(--e-button-info-outlined-hover);
-      }
-    }
-    &.disabled {
-      background-color: var(--e-button-info-outlined-hover);
-      &:hover {
-        background-color: var(--e-button-info-outlined-hover);
-      }
-    }
-    &:hover {
-      background: var(--e-button-info-hover);
-    }
+    @include button-style(
+      var(--e-white),
+      $e-button-info,
+      $e-button-info,
+      get-darken-color($e-button-info),
+      get-lighter-color($e-button-info)
+    );
   }
 
   &.warn {
-    background: var(--e-button-warning);
-    color: white;
-    border: 1px solid;
-    &.outlined {
-      border: 1px solid var(--e-button-warning);
-      color: var(--e-button-warning);
-      &:hover {
-        background: var(--e-button-warning-outlined-hover);
-      }
-    }
-    &.disabled {
-      background-color: var(--e-button-warning-outlined-hover);
-      &:hover {
-        background-color: var(--e-button-warning-outlined-hover);
-      }
-    }
-    &:hover {
-      background: var(--e-button-warning-hover);
-    }
+    @include button-style(
+      var(--e-white),
+      $e-button-warning,
+      $e-button-warning,
+      get-darken-color($e-button-warning),
+      get-lighter-color($e-button-warning)
+    );
   }
 
   &.help {
-    background: var(--e-button-help);
-    color: white;
-    border: 1px solid;
-    &.outlined {
-      border: 1px solid var(--e-button-help);
-      color: var(--e-button-help);
-      &:hover {
-        background: var(--e-button-help-outlined-hover);
-      }
-    }
-    &.disabled {
-      background-color: var(--e-button-help-outlined-hover);
-      &:hover {
-        background-color: var(--e-button-help-outlined-hover);
-      }
-    }
-    &:hover {
-      background: var(--e-button-help-hover);
-    }
+    @include button-style(
+      var(--e-white),
+      $e-button-help,
+      $e-button-help,
+      get-darken-color($e-button-help),
+      get-lighter-color($e-button-help)
+    );
   }
 
   &.danger {
-    background: var(--e-button-danger);
-    color: white;
-    border: 1px solid;
-    &.outlined {
-      border: 1px solid var(--e-button-danger);
-      color: var(--e-button-danger);
-      &:hover {
-        background: var(--e-button-danger-outlined-hover);
-      }
-    }
-    &.disabled {
-      background-color: var(--e-button-danger-outlined-hover);
-      &:hover {
-        background-color: var(--e-button-danger-outlined-hover);
-      }
-    }
-    &:hover {
-      background: var(--e-button-danger-hover);
-    }
+    @include button-style(
+      var(--e-white),
+      $e-button-danger,
+      $e-button-danger,
+      get-darken-color($e-button-danger),
+      get-lighter-color($e-button-danger)
+    );
   }
 
   &.contrast {
-    background: var(--e-button-contrast);
-    color: white;
-    border: 1px solid;
-    &.outlined {
-      border: 1px solid var(--e-button-contrast);
-      color: var(--e-button-contrast);
-      &:hover {
-        background: var(--e-button-contrast-outlined-hover);
-      }
-    }
-    &.disabled {
-      background-color: var(--e-button-contrast-outlined-hover);
-      &:hover {
-        background-color: var(--e-button-contrast-outlined-hover);
-      }
-    }
-    &:hover {
-      background: var(--e-button-contrast-hover);
-    }
+    @include button-style(
+      var(--e-white),
+      $e-button-contrast,
+      $e-button-contrast,
+      get-darken-color($e-button-contrast),
+      get-lighter-color($e-button-contrast)
+    );
   }
 }
