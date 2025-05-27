@@ -1,5 +1,3 @@
-import { i, span } from 'motion/react-client';
-
 export const AppButton = ({
   label,
   disabled = false,
@@ -24,7 +22,6 @@ export const AppButton = ({
           rounded && 'rounded',
           outlined && 'outlined',
           !label && 'e-button-icon-only',
-          raised && 'e-app-button-raised',
         ]
           .filter(Boolean)
           .join(' ')}

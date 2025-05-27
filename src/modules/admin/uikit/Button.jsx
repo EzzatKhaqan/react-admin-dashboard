@@ -94,12 +94,6 @@ export const Button = () => {
       </div>
       <div className="flex flex-col md:flex-row gap-5">
         <div className="card flex flex-col gap-5 w-full md:w-1/2">
-          <h1>Raised</h1>
-          <div className="flex flex-wrap gap-3">
-            <AppButton label="Raised" type="primary" raised={true} />
-          </div>
-        </div>
-        <div className="card flex flex-col gap-5 w-full md:w-1/2">
           <div>Icon</div>
           <div className="flex flex-wrap gap-3">
             <AppButton type="success" rounded={true} icon="pi pi-check" outlined={true} />
@@ -111,8 +105,6 @@ export const Button = () => {
             <AppButton type="danger" rounded={true} icon="pi pi-times" outlined={true} />
           </div>
         </div>
-      </div>
-      <div className="flex flex-col md:flex-row gap-5">
         <div className="card flex flex-col gap-5 w-full md:w-1/2">
           <h1 onClick={() => console.log(12)}>Loading</h1>
           <div className="flex flex-wrap gap-3">
