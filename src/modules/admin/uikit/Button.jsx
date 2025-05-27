@@ -1,6 +1,21 @@
+import { useState } from 'react';
 import { AppButton } from '../../../shared/index';
 
 export const Button = () => {
+  const [loading, setLoading] = useState({
+    btn1: false,
+    btn2: false,
+    btn3: false,
+    btn4: false,
+  });
+
+  const toggleLoading = (btn) => () => {
+    setLoading((prev) => ({ ...prev, [btn]: true }));
+    setTimeout(() => {
+      setLoading((prev) => ({ ...prev, [btn]: false }));
+    }, 2000);
+  };
+
   return (
     <>
       <div className="flex flex-col md:flex-row gap-5 mb-5">
@@ -79,15 +94,89 @@ export const Button = () => {
       </div>
       <div className="flex flex-col md:flex-row gap-5">
         <div className="card flex flex-col gap-5 w-full md:w-1/2">
-          <h1>Loading</h1>
-          <div>
-            <AppButton label="Loading" />
+          <h1>Raised</h1>
+          <div className="flex flex-wrap gap-3">
+            <AppButton label="Raised" type="primary" raised={true} />
           </div>
         </div>
         <div className="card flex flex-col gap-5 w-full md:w-1/2">
           <div>Icon</div>
-          <div>
-            <AppButton label="icon" />
+          <div className="flex flex-wrap gap-3">
+            <AppButton type="success" rounded={true} icon="pi pi-check" outlined={true} />
+            <AppButton type="secondary" rounded={true} icon="pi pi-bookmark" outlined={true} />
+            <AppButton type="success" rounded={true} icon="pi pi-search" outlined={true} />
+            <AppButton type="info" rounded={true} icon="pi pi-user" outlined={true} />
+            <AppButton type="warn" rounded={true} icon="pi pi-bell" outlined={true} />
+            <AppButton type="help" rounded={true} icon="pi pi-heart" outlined={true} />
+            <AppButton type="danger" rounded={true} icon="pi pi-times" outlined={true} />
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col md:flex-row gap-5">
+        <div className="card flex flex-col gap-5 w-full md:w-1/2">
+          <h1 onClick={() => console.log(12)}>Loading</h1>
+          <div className="flex flex-wrap gap-3">
+            <AppButton
+              label="Search"
+              type="primary"
+              loading={loading.btn1}
+              onClick={toggleLoading('btn1')}
+            />
+            <AppButton
+              label="Search"
+              type="success"
+              icon="pi pi-circle"
+              loading={loading.btn2}
+              onClick={toggleLoading('btn2')}
+            />
+            <AppButton
+              label="Search"
+              icon="pi pi-search"
+              direction="rtl"
+              type="help"
+              loading={loading.btn3}
+              onClick={toggleLoading('btn3')}
+            />
+            <AppButton
+              type="warn"
+              icon="pi pi-search"
+              direction="rtl"
+              outlined={true}
+              loading={loading.btn4}
+              onClick={toggleLoading('btn4')}
+            />
+            <AppButton
+              type="success"
+              rounded={true}
+              icon="pi pi-check"
+              outlined={true}
+              loading={loading.btn1}
+              onClick={toggleLoading('btn1')}
+            />
+            <AppButton
+              type="secondary"
+              rounded={true}
+              icon="pi pi-bookmark"
+              outlined={true}
+              loading={loading.btn2}
+              onClick={toggleLoading('btn2')}
+            />
+            <AppButton
+              type="success"
+              rounded={true}
+              icon="pi pi-search"
+              outlined={true}
+              loading={loading.btn3}
+              onClick={toggleLoading('btn3')}
+            />
+            <AppButton
+              type="info"
+              rounded={true}
+              icon="pi pi-user"
+              outlined={true}
+              loading={loading.btn4}
+              onClick={toggleLoading('btn4')}
+            />
           </div>
         </div>
       </div>
