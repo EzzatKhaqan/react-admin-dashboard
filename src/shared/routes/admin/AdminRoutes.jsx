@@ -22,6 +22,10 @@ export const AdminRoutes = [
             element: <Button />,
           },
           {
+            path: 'inputs',
+            element: <Input />,
+          },
+          {
             path: 'form',
             element: <Form />,
           },

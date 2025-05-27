@@ -22,6 +22,11 @@ export const AppAdminSideBar = () => {
           icon: 'pi pi-mobile',
         },
         {
+          label: 'Inputs',
+          to: '/admin/ui-kits/inputs',
+          icon: 'pi pi-check-square',
+        },
+        {
           label: 'Form',
           to: '/admin/ui-kits/form',
           icon: 'pi pi-fw pi-file',
@@ -30,11 +35,6 @@ export const AppAdminSideBar = () => {
           label: 'Table',
           to: '/admin/ui-kits/table',
           icon: 'pi pi-table',
-        },
-        {
-          label: 'Input',
-          to: '/admin/ui-kits/input',
-          icon: 'pi pi-check-square',
         },
       ],
     },

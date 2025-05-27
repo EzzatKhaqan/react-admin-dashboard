@@ -7,3 +7,8 @@ export { DataTable } from './components/Table/DataTable.jsx';
 export { PageHeader } from './components/common/pageHeader/PageHeader.jsx';
 
 export { AppButton } from './components/common/button/AppButton.jsx';
+export { InputText } from './components/input/InputText.jsx';
+
+// utils
+
+export { ValidationRoules } from './utils/validationRoules.js';

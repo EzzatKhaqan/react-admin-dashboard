@@ -1,0 +1,42 @@
+$e-input-text-color: #334155;
+$e-input-text-border-color: #cbd5e1;
+$e-input-text-acrive-border-color: #00a8e8;
+$e-input-disabled-bg-color: #e6f0ff;
+$e-input-invalid-border-color: #ed1010;
+$e-input-invalid-text-color: #c70a0a;
+.e-input-text-wrapper {
+  position: relative;
+  .e-input-text {
+    border: 1px solid $e-input-text-border-color;
+    border-radius: 5px;
+    color: $e-input-text-color;
+    padding: 5px 8px;
+    outline: none;
+    font-size: 14px;
+    position: relative;
+    transition: all 0.2s;
+
+    &.e-input-text-disabeld {
+      pointer-events: none;
+      user-select: none;
+      background-color: $e-input-disabled-bg-color;
+    }
+
+    &.invalid-input {
+      border-color: $e-input-invalid-border-color;
+      color: $e-input-invalid-text-color;
+    }
+
+    &:focus {
+      border: 1px solid $e-input-text-acrive-border-color;
+    }
+
+    &.e-input-text-fluid {
+      width: 100%;
+    }
+  }
+  .e-input-text-error {
+    color: var(--e-danger);
+    font-size: 10px;
+  }
+}
