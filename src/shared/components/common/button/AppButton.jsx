@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 export const AppButton = ({
@@ -15,8 +16,9 @@ export const AppButton = ({
   children,
   to,
 }) => {
-  const Wrapper = role.toLowerCase() == 'link' ? Link : 'div';
+  const Wrapper = role.toLowerCase() == 'link' ? Link : React.Fragment;
   const wrapperProps = role.toLowerCase() == 'link' ? { to: to } : {};
+
   return (
     <Wrapper {...wrapperProps}>
       <button

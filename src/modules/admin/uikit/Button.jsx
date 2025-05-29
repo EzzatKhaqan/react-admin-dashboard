@@ -7,6 +7,11 @@ export const Button = () => {
     btn2: false,
     btn3: false,
     btn4: false,
+    btn5: false,
+    btn6: false,
+    btn7: false,
+    btn8: false,
+    btn9: false,
   });
 
   const toggleLoading = (btn) => () => {
@@ -142,32 +147,32 @@ export const Button = () => {
               rounded={true}
               icon="pi pi-check"
               outlined={true}
-              loading={loading.btn1}
-              onClick={toggleLoading('btn1')}
+              loading={loading.btn5}
+              onClick={toggleLoading('btn5')}
             />
             <AppButton
               type="secondary"
               rounded={true}
               icon="pi pi-bookmark"
               outlined={true}
-              loading={loading.btn2}
-              onClick={toggleLoading('btn2')}
+              loading={loading.btn6}
+              onClick={toggleLoading('btn6')}
             />
             <AppButton
               type="success"
               rounded={true}
               icon="pi pi-search"
               outlined={true}
-              loading={loading.btn3}
-              onClick={toggleLoading('btn3')}
+              loading={loading.btn7}
+              onClick={toggleLoading('btn7')}
             />
             <AppButton
               type="info"
               rounded={true}
               icon="pi pi-user"
               outlined={true}
-              loading={loading.btn4}
-              onClick={toggleLoading('btn4')}
+              loading={loading.btn8}
+              onClick={toggleLoading('btn8')}
             />
           </div>
         </div>
