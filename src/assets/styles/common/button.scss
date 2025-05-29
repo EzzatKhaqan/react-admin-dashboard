@@ -103,7 +103,23 @@ $e-button-contrast: #000;
       border-radius: 50%;
     }
   }
-
+  &.e-button-link {
+    div {
+      &:active {
+        color: var(--e-link-active);
+      }
+      &:hover {
+        color: var(--e-link-hover);
+        text-decoration: underline;
+      }
+      &:visited {
+        color: var(--e-link-visited);
+      }
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
   &.primary,
   &.secondary,
   &.success,

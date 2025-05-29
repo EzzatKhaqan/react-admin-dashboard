@@ -16,7 +16,8 @@ export const AppButton = ({
   children,
   to,
 }) => {
-  const Wrapper = role.toLowerCase() == 'link' ? Link : React.Fragment;
+  const isLink = role.toLowerCase() == 'link';
+  const Wrapper = isLink ? Link : React.Fragment;
   const wrapperProps = role.toLowerCase() == 'link' ? { to: to } : {};
 
   return (
@@ -31,6 +32,7 @@ export const AppButton = ({
           rounded && 'rounded',
           outlined && 'outlined',
           !label && 'e-button-icon-only',
+          isLink && 'e-button-link',
         ]
           .filter(Boolean)
           .join(' ')}
