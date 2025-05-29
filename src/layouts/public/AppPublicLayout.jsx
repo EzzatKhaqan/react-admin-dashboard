@@ -1,14 +1,10 @@
-import { BrowserRouter as Router } from "react-router-dom";
-
-
-const AppPublicLayout = ()=>{
-
-    return (
-        <>
-            <h1>Public Layout</h1>
-        </>
-    );
+import AppPublicHeader from './AppPublicHeader';
+const AppPublicLayout = () => {
+  return (
+    <>
+      <AppPublicHeader />
+    </>
+  );
 };
-
 
 export default AppPublicLayout;

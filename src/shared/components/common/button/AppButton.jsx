@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export const AppButton = ({
   label,
   disabled = false,
@@ -9,11 +11,16 @@ export const AppButton = ({
   direction = 'ltr',
   loading = false,
   onClick,
+  role = 'button',
+  children,
+  to,
 }) => {
+  const Wrapper = role.toLowerCase() == 'link' ? Link : 'div';
+  const wrapperProps = role.toLowerCase() == 'link' ? { to: to } : {};
   return (
-    <>
+    <Wrapper {...wrapperProps}>
       <button
-        type="button"
+        type={role}
         onClick={onClick}
         className={[
           'e-app-button',
@@ -36,6 +43,6 @@ export const AppButton = ({
           )}
         </div>
       </button>
-    </>
+    </Wrapper>
   );
 };
