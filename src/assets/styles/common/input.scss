@@ -32,7 +32,7 @@ $e-input-invalid-text-color: #c70a0a;
   &:focus {
     border-color: $e-input-text-acrive-border-color;
   }
-  &:hover {
+  &:hover:not(:focus) {
     border-color: var(--e-input-hover-color);
   }
 
