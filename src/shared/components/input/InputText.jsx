@@ -49,6 +49,7 @@ export const InputText = ({
           .join(' ')}
         placeholder={placeholder}
         onChange={(e) => setModelValue(e.target.value)}
+        disabled={disabled}
       />
     </>
   );

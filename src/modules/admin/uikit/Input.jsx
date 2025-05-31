@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { InputText, IconFeild, InputIcon } from '../../../shared/index';
+import { InputText, IconFeild, InputIcon, FloatLabel } from '../../../shared/index';
 
 export const Input = () => {
   const [firstName, setFirstName] = useState();
@@ -22,7 +22,7 @@ export const Input = () => {
           </div>
           <div className="card flex flex-col gap-5">
             <h1 className="text-xl">Icon</h1>
-            <div className="flex md:flex-col gap-4">
+            <div className="flex flex-col gap-4">
               <IconFeild>
                 <InputIcon icon="pi pi-user"></InputIcon>
                 <InputText placeholder="User" className="e-input-text-fluid" />
@@ -41,7 +41,15 @@ export const Input = () => {
               </IconFeild>
             </div>
           </div>
-          <div className="card flex flex-col gap-5"></div>
+          <div className="card flex flex-col gap-5">
+            <div className="text-xl">Float Label</div>
+            <div className="flex flex-col gap-5">
+              <FloatLabel>
+                <InputText id="username" className="w-full"></InputText>
+                <label htmlFor="">Username</label>
+              </FloatLabel>
+            </div>
+          </div>
         </div>
         <div className="md:w-1/2">
           <div className="card flex flex-col gap-5">

@@ -37,7 +37,7 @@ $e-input-invalid-text-color: #c70a0a;
     width: 100%;
   }
 }
-
+// IconFeild
 .e-icon-feild {
   position: relative;
 
@@ -64,5 +64,30 @@ $e-input-invalid-text-color: #c70a0a;
   }
   .e-input-text:not(:last-child) {
     padding-inline-end: calc((var(--e-form-padding-x) * 2) + var(--e-icon-size));
+  }
+}
+
+// FloatLable
+
+.e-float-label {
+  position: relative;
+
+  label {
+    position: absolute;
+    pointer-events: none;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.2s;
+    line-height: 1;
+    font-weight: var(--e-floatlabel-font-weight);
+    font-size: var(--e-floatlabel-size);
+    inset-inline-start: var(--e-floatlabel-position-x);
+    color: var(--e-floatlabel-color);
+  }
+
+  &:has(input:focus) label {
+    color: var(--e-primary-blue);
+    font-size: calc(var(--e-floatlabel-size) - var(--e-floatlabel-size) / 5);
+    top: 0;
   }
 }

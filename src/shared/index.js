@@ -10,6 +10,7 @@ export { AppButton } from './components/common/button/AppButton.jsx';
 export { InputText } from './components/input/InputText.jsx';
 export { IconFeild } from './components/input/IconFeild.jsx';
 export { InputIcon } from './components/input/InputIcon.jsx';
+export { FloatLabel } from './components/input/FloatLabel.jsx';
 
 // utils
 
