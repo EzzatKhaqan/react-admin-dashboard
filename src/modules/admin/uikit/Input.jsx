@@ -53,7 +53,7 @@ export const Input = () => {
           <div className="card flex flex-col gap-5">
             <div className="text-xl">Textarea</div>
             <div className="flex flex-col">
-              <Textarea placeholder="Message" className="w-full" cols="3" rows="20"></Textarea>
+              <Textarea placeholder="Message" className="w-full" cols="3" rows="3"></Textarea>
             </div>
           </div>
         </div>

@@ -8,6 +8,7 @@ export const Textarea = ({ className, placeholder, cols = 3, rows = 3 }) => {
         className={['e-textarea', className].filter(Boolean).join(' ')}
         name=""
         id=""
+        style={{ overflow: 'hidden' }}
       ></textarea>
     </>
   );
