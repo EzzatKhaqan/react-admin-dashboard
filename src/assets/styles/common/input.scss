@@ -68,7 +68,6 @@ $e-input-invalid-text-color: #c70a0a;
 }
 
 // FloatLable
-
 .e-float-label {
   position: relative;
 
@@ -77,7 +76,7 @@ $e-input-invalid-text-color: #c70a0a;
     pointer-events: none;
     top: 50%;
     transform: translateY(-50%);
-    transition: all 0.2s;
+    transition: all 0.2s ease;
     line-height: 1;
     font-weight: var(--e-floatlabel-font-weight);
     font-size: var(--e-floatlabel-size);
@@ -86,8 +85,10 @@ $e-input-invalid-text-color: #c70a0a;
   }
 
   &:has(input:focus) label {
+    background-color: white;
     color: var(--e-primary-blue);
     font-size: calc(var(--e-floatlabel-size) - var(--e-floatlabel-size) / 5);
     top: 0;
+    z-index: 100;
   }
 }
