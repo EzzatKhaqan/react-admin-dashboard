@@ -2,12 +2,13 @@ import { useEffect, useState } from 'react';
 
 export const InputText = ({
   id,
-  placeholder,
+  placeholder = ' ',
   className,
   disabled = false,
   invalid = false,
   value,
   rules = [],
+  required = false,
 }) => {
   const [modelValue, setModelValue] = useState();
 
@@ -50,6 +51,7 @@ export const InputText = ({
         placeholder={placeholder}
         onChange={(e) => setModelValue(e.target.value)}
         disabled={disabled}
+        required={required}
       />
     </>
   );
