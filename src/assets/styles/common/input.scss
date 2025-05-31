@@ -30,7 +30,10 @@ $e-input-invalid-text-color: #c70a0a;
   }
 
   &:focus {
-    border: 1px solid $e-input-text-acrive-border-color;
+    border-color: $e-input-text-acrive-border-color;
+  }
+  &:hover {
+    border-color: var(--e-input-hover-color);
   }
 
   &.e-input-text-fluid {
@@ -90,5 +93,28 @@ $e-input-invalid-text-color: #c70a0a;
     font-size: calc(var(--e-floatlabel-size) - var(--e-floatlabel-size) / 5);
     top: 0;
     z-index: 100;
+  }
+}
+
+// Textarea
+
+.e-textarea {
+  outline: none;
+  border: 1px solid var(--e-border-color);
+  border-radius: 5px;
+  font-size: 14px;
+  color: $e-input-text-color;
+  background-color: var(--e-textarea-background);
+  padding-inline: var(--e-textarea-padding-x);
+  padding-block: var(--e-textarea-padding-y);
+  transition: all 0.2s ease;
+  appearance: none;
+  letter-spacing: 0.6px;
+
+  &:enabled:focus {
+    border: 1px solid var(--e-primary-blue);
+  }
+  &:hover {
+    border-color: var(--e-input-hover-color);
   }
 }

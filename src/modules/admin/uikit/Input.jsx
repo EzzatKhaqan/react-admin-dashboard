@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { InputText, IconFeild, InputIcon, FloatLabel } from '../../../shared/index';
+import { InputText, IconFeild, InputIcon, FloatLabel, Textarea } from '../../../shared/index';
 
 export const Input = () => {
   const [firstName, setFirstName] = useState();
@@ -48,6 +48,12 @@ export const Input = () => {
                 <InputText id="username" className="w-full"></InputText>
                 <label htmlFor="">Username</label>
               </FloatLabel>
+            </div>
+          </div>
+          <div className="card flex flex-col gap-5">
+            <div className="text-xl">Textarea</div>
+            <div className="flex flex-col">
+              <Textarea placeholder="Message" className="w-full" cols="3" rows="20"></Textarea>
             </div>
           </div>
         </div>
