@@ -36,23 +36,20 @@ export const InputText = ({
 
   return (
     <>
-      <div className="e-input-text-wrapper">
-        <input
-          id={id}
-          type="text"
-          className={[
-            className,
-            'e-input-text',
-            disabled && 'e-input-text-disabeld',
-            (invalid || error) && 'invalid-input',
-          ]
-            .filter(Boolean)
-            .join(' ')}
-          placeholder={placeholder}
-          onChange={(e) => setModelValue(e.target.value)}
-        />
-        {error && <span className="e-input-text-error">{error}</span>}
-      </div>
+      <input
+        id={id}
+        type="text"
+        className={[
+          className,
+          'e-input-text',
+          disabled && 'e-input-text-disabeld',
+          (invalid || error) && 'invalid-input',
+        ]
+          .filter(Boolean)
+          .join(' ')}
+        placeholder={placeholder}
+        onChange={(e) => setModelValue(e.target.value)}
+      />
     </>
   );
 };

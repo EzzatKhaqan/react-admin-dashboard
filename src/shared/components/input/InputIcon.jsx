@@ -1,7 +1,7 @@
-export const InputIcon = () => {
+export const InputIcon = ({ icon }) => {
   return (
     <>
-      <div className="e-input-icon"></div>
+      <span className={['e-input-icon', icon].filter(Boolean).join(' ')}></span>
     </>
   );
 };

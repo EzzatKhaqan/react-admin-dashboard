@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { InputText, ValidationRoules } from '../../../shared/index';
+import { InputText, IconFeild, InputIcon } from '../../../shared/index';
 
 export const Input = () => {
   const [firstName, setFirstName] = useState();
@@ -9,7 +9,7 @@ export const Input = () => {
       <div className="flex flex-col md:flex-row gap-5">
         <div className="md:w-1/2">
           <div className="card flex flex-col gap-5">
-            <h1>Input Text</h1>
+            <h1 className="text-xl">Input Text</h1>
             <div className="flex md:flex-row gap-4 ">
               <InputText
                 placeholder="Default"
@@ -19,17 +19,33 @@ export const Input = () => {
               <InputText placeholder="Disabled" className="e-input-text-fluid" disabled={true} />
               <InputText placeholder="Invalid" className="e-input-text-fluid" invalid={true} />
             </div>
-            <h1>Icon</h1>
-            <div className="flex md:flex-row gap-4 ">
-              <InputText placeholder="Default" className="e-input-text-fluid" />
-              <InputText placeholder="Disabled" className="e-input-text-fluid" disabled={true} />
-              <InputText placeholder="Invalid" className="e-input-text-fluid" invalid={true} />
+          </div>
+          <div className="card flex flex-col gap-5">
+            <h1 className="text-xl">Icon</h1>
+            <div className="flex md:flex-col gap-4">
+              <IconFeild>
+                <InputIcon icon="pi pi-user"></InputIcon>
+                <InputText placeholder="User" className="e-input-text-fluid" />
+              </IconFeild>
+              <IconFeild>
+                <InputIcon icon="pi pi-building"></InputIcon>
+                <InputText placeholder="City" className="e-input-text-fluid p-5" />
+              </IconFeild>
+              <IconFeild>
+                <InputIcon icon="pi pi-home"></InputIcon>
+                <InputText placeholder="Home" className="e-input-text-fluid p-5" />
+              </IconFeild>
+              <IconFeild>
+                <InputText placeholder="Search" className="e-input-text-fluid p-5" />
+                <InputIcon icon="pi pi-search"></InputIcon>
+              </IconFeild>
             </div>
           </div>
+          <div className="card flex flex-col gap-5"></div>
         </div>
         <div className="md:w-1/2">
           <div className="card flex flex-col gap-5">
-            <h1>Input</h1>
+            <h1 className="text-xl">Input</h1>
             <div className="flex flex-wrap gap-4">
               <InputText placeholder="Input Text" />
               <InputText placeholder="Input Text" />

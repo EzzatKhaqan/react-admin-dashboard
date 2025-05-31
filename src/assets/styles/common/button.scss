@@ -104,19 +104,24 @@ $e-button-contrast: #000;
     }
   }
   &.e-button-link {
+    transition: all 0.2s;
     div {
       &:active {
+        transition: all 0.2s;
         color: var(--e-link-active);
       }
       &:hover {
-        color: var(--e-link-hover);
+        transition: all 0.2s;
+        // color: var(--e-link-hover);
         text-decoration: underline;
       }
       &:visited {
+        transition: all 0.2s;
         color: var(--e-link-visited);
       }
     }
     &:hover {
+      transition: all 0.2s;
       text-decoration: underline;
     }
   }

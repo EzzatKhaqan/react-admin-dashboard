@@ -4,39 +4,65 @@ $e-input-text-acrive-border-color: #00a8e8;
 $e-input-disabled-bg-color: #e6f0ff;
 $e-input-invalid-border-color: #ed1010;
 $e-input-invalid-text-color: #c70a0a;
-.e-input-text-wrapper {
+
+.e-input-text {
+  border: 1px solid $e-input-text-border-color;
+  border-radius: 5px;
+  color: var(--e-inputtext-color);
+  padding-block: var(--e-inputtext-padding-y);
+  padding-inline: var(--e-inputtext-padding-x);
+  outline: none;
+  outline-color: transparent;
+  appearance: none;
+  font-size: 14px;
   position: relative;
-  .e-input-text {
-    border: 1px solid $e-input-text-border-color;
-    border-radius: 5px;
-    color: $e-input-text-color;
-    padding: 5px 8px;
-    outline: none;
-    font-size: 14px;
-    position: relative;
-    transition: all 0.2s;
+  transition: all 0.2s;
 
-    &.e-input-text-disabeld {
-      pointer-events: none;
-      user-select: none;
-      background-color: $e-input-disabled-bg-color;
-    }
-
-    &.invalid-input {
-      border-color: $e-input-invalid-border-color;
-      color: $e-input-invalid-text-color;
-    }
-
-    &:focus {
-      border: 1px solid $e-input-text-acrive-border-color;
-    }
-
-    &.e-input-text-fluid {
-      width: 100%;
-    }
+  &.e-input-text-disabeld {
+    pointer-events: none;
+    user-select: none;
+    background-color: $e-input-disabled-bg-color;
   }
-  .e-input-text-error {
-    color: var(--e-danger);
-    font-size: 10px;
+
+  &.invalid-input {
+    border-color: $e-input-invalid-border-color;
+    color: $e-input-invalid-text-color;
+  }
+
+  &:focus {
+    border: 1px solid $e-input-text-acrive-border-color;
+  }
+
+  &.e-input-text-fluid {
+    width: 100%;
+  }
+}
+
+.e-icon-feild {
+  position: relative;
+
+  .e-input-icon {
+    position: absolute;
+    top: 50%;
+    margin-top: calc(-1 * var(--e-icon-size) / 2);
+    color: #94a3b8;
+    line-height: 1;
+    font-size: var(--e-icon-size);
+  }
+
+  .e-input-icon:first-child {
+    padding-inline-start: var(--e-form-padding-x);
+  }
+  .e-input-icon:last-child {
+    inset-inline-end: var(--e-form-padding-x);
+  }
+  .e-input-text {
+    padding-inline-start: var(--e-form-padding-x);
+  }
+  .e-input-text:not(:first-child) {
+    padding-inline-start: calc((var(--e-form-padding-x) * 2) + var(--e-icon-size));
+  }
+  .e-input-text:not(:last-child) {
+    padding-inline-end: calc((var(--e-form-padding-x) * 2) + var(--e-icon-size));
   }
 }

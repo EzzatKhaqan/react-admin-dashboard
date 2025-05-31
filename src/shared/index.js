@@ -8,6 +8,8 @@ export { PageHeader } from './components/common/pageHeader/PageHeader.jsx';
 
 export { AppButton } from './components/common/button/AppButton.jsx';
 export { InputText } from './components/input/InputText.jsx';
+export { IconFeild } from './components/input/IconFeild.jsx';
+export { InputIcon } from './components/input/InputIcon.jsx';
 
 // utils
 
