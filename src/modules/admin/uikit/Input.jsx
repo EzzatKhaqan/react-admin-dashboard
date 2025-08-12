@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { InputText, IconFeild, InputIcon, FloatLabel, Textarea } from '../../../shared/index';
-
+import { InputText, IconFeild, InputIcon, FloatLabel } from '../../../shared/index';
+import { Textarea } from '../../../shared/components/input/Textarea';
 export const Input = () => {
   const [firstName, setFirstName] = useState();
 
