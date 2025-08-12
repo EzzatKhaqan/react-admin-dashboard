@@ -1,8 +1,8 @@
-import AppPublicHeader from './AppPublicHeader';
+import { Outlet } from 'react-router-dom';
 const AppPublicLayout = () => {
   return (
     <>
-      <AppPublicHeader />
+      <Outlet />
     </>
   );
 };

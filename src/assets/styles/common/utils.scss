@@ -8,3 +8,10 @@
     margin-bottom: 0;
   }
 }
+.gradient-text {
+  background: linear-gradient(90deg, var(--e-primary-blue), var(--e-primary-light-blue));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
